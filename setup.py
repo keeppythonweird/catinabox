@@ -41,5 +41,4 @@ setup(name='catinabox',
       install_requires=requirements,
       tests_require=test_requirements,
       cmdclass={'test': PyTest},
-      packages=find_packages(),
-      entry_points={'console_scripts': ['cattery=catinabox.__main__:main']})
+      packages=find_packages())
