@@ -1,5 +1,7 @@
 import json
 import pytest
+import requests
+import time
 
 from util import HttpBaseClient, start_service
 
@@ -8,8 +10,21 @@ from util import HttpBaseClient, start_service
 def cattery_client():
     # start the service
     service = start_service('catinabox.services.cattery')
-    yield HttpBaseClient("http://localhost:8000")
+    client = HttpBaseClient("http://localhost:8000")
+    for _ in range(10):
+        try:
+            resp = client.get('')
+            if resp.status_code == 200:
+                break
+        except requests.exceptions.ConnectionError:
+            pass
+        time.sleep(1)
+    else:
+        pytest.fail('Unable to connect to cattery service')
+
+    yield client
     service.terminate()
+    service.wait()
     # stop the service
 
 
