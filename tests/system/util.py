@@ -18,6 +18,11 @@ class HttpBaseClient(object):
             base_url=self._base_url, url_parts="/".join(args)
         ), **kwargs)
 
+    def patch(self, *args, **kwargs):
+        return requests.patch("{base_url}/{url_parts}".format(
+            base_url=self._base_url, url_parts="/".join(args)
+        ), **kwargs)
+
     def delete(self, *args, **kwargs):
         return requests.delete("{base_url}/{url_parts}".format(
             base_url=self._base_url, url_parts="/".join(args)
