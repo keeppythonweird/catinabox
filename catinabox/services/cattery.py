@@ -1,5 +1,6 @@
-import json
 from nameko.web.handlers import http
+import json
+import six
 
 
 CAT_SITTING_ON_FENCE = '''
@@ -27,6 +28,13 @@ CAT_SITTING_ON_FENCE = '''
 '''
 
 
+def json_decode(raw):
+    if six.PY3:
+        return json.loads(raw.decode('UTF-8'))
+    else:
+        return json.loads(raw)
+
+
 class CatteryService(object):
     name = 'cattery'
     _cats = []
@@ -49,6 +57,6 @@ class CatteryService(object):
 
     @http('POST', '/cats')
     def create_cat(self, request):
-        cat_info = json.loads(request.get_data())
+        cat_info = json_decode(request.get_data())
         self._cats.append(cat_info)
-        return 200
+        return 200, ''
