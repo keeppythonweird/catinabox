@@ -9,7 +9,7 @@ from util import HttpBaseClient, start_service
 @pytest.yield_fixture
 def cattery_client():
     # start the service
-    service = start_service('catinabox.services.cattery')
+    service = start_service('catinabox.services.cattery_service')
     client = HttpBaseClient("http://localhost:8000")
     for _ in range(10):
         try:
@@ -73,14 +73,12 @@ class TestGetCats(object):
 
         # Put food in the pantry
         result = cattery_client.patch('pantry',
-                                      data=json.dumps({"burgers": 1}))
-        assert result.status_code == 204
-        result = cattery_client.patch('pantry',
-                                      data=json.dumps({"cheezburgers": 4}))
+                                      data=json.dumps([("burger", 1),
+                                                       ("cheezburger", 4)]))
         assert result.status_code == 204
 
         # Feed the cats
-        result = cattery_client.post('cats/mouths')
+        result = cattery_client.post('cats/dishes')
         assert result.status_code == 204
 
         # Verify the cats were fed
@@ -94,4 +92,6 @@ class TestGetCats(object):
         # Verify the pantry has food left
         result = cattery_client.get('pantry')
         assert result.status_code == 200
-        assert result.json() == [{"cheezburgers": 3}]
+        assert result.json() == ["cheezburger",
+                                 "cheezburger",
+                                 "cheezburger"]

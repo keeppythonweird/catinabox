@@ -3,6 +3,9 @@ from nameko.web.handlers import http
 import json
 import six
 
+from catinabox import pantry
+
+
 CAT_SITTING_ON_FENCE = '''
              *     ,MMM8&&&.            *
                   MMMM88&&&&&    .
@@ -29,23 +32,6 @@ CAT_SITTING_ON_FENCE = '''
 NEW_CAT_TEMPLATE = {"food_eaten": []}
 
 
-def _expand_pantry(pantry):
-    foods = []
-    for food_info in pantry:
-        food, quantity = food_info.keys()[0], food_info.values()[0]
-        foods += [food] * quantity
-    return foods
-
-
-def _remove_food_from_pantry(food, pantry):
-    for food_quantity in pantry:
-        for food_item in food:
-            if food_item == food_quantity.keys()[0]:
-                food_quantity[food_item] -= 1
-                if food_quantity[food_item] == 0:
-                    pantry.remove({food_item: 0})
-
-
 def json_decode(raw):
     if six.PY3:
         return json.loads(raw.decode('UTF-8'))
@@ -56,7 +42,7 @@ def json_decode(raw):
 class CatteryService(object):
     name = 'cattery'
     _cats = []
-    _pantry = []
+    _pantry = pantry.Pantry()
 
     @http('GET', '/')
     def index(self, request):
@@ -91,25 +77,16 @@ class CatteryService(object):
         return 204, ""
 
     ###########################################################################
-    # cats/mouths
+    # cats/dishes
     ###########################################################################
 
-    @http('POST', '/cats/mouths')
+    @http('POST', '/cats/dishes')
     def feed_the_cats(self, request):
-        consumed_foods = []
+        foods_to_feed = self._pantry.retrieve_food(len(self._cats))
 
-        for cat, food in zip(self._cats, _expand_pantry(self._pantry)):
-            # TODO: they probably don't always end with s....
-            cat["food_eaten"].append(food[:-1])
-            consumed_foods.append(food)
+        for cat, food in zip(self._cats, foods_to_feed):
+            cat["food_eaten"].append(food)
 
-        _remove_food_from_pantry(consumed_foods, self._pantry)
-
-        # TODO: TOO TIRED TO FIX PROPERLY WILL MAKE PANTRY CLASS DONT LOOK OH
-        # GOD NOW THE INTERNET KNOWS FOREVER
-        cheezburgers = [pantry_item for pantry_item in self._pantry if
-                              pantry_item.keys()[0] == "cheezburgers"]
-        cheezburgers[0]["cheezburgers"] = 3
         return 204, ""
 
     ###########################################################################
@@ -118,7 +95,7 @@ class CatteryService(object):
 
     @http('GET', '/pantry')
     def get_pantry(self, request):
-        return 200, json.dumps(self._pantry)
+        return 200, json.dumps(self._pantry.list_food())
 
     @http('PATCH', '/pantry')
     def add_food_to_pantry(self, request):
@@ -127,5 +104,7 @@ class CatteryService(object):
         # TODO: GET THE FOOD FROM THE FOOD TRUCK
         # for now we will get it from nowhere
 
-        self._pantry.append(food_to_add)
+        for food_type, quantity in food_to_add:
+            self._pantry.add_food(food_type=food_type, quantity=quantity)
+
         return 204, ""
