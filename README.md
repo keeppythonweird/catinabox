@@ -1,4 +1,7 @@
 # catinabox
+[![Build Status](https://travis-ci.org/keeppythonweird/catinabox.svg?branch=master)](https://travis-ci.org/keeppythonweird/catinabox)
+[![Coverage Status](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=master&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=master)
+
 Intro to Testing and Test Automation in Python
 
 This repo holds a tutorial which will walk you through:
