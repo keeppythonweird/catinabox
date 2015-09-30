@@ -4,7 +4,7 @@ import json
 import nameko.web.handlers
 
 
-def http(*args, **kwargs):
+def http_jsonify(*args, **kwargs):
     def decorator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
