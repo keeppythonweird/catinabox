@@ -2,6 +2,7 @@ import requests
 import shlex
 import subprocess
 import time
+import yaml
 
 import pytest
 
@@ -32,23 +33,36 @@ class HttpBaseClient(object):
         ), **kwargs)
 
 
-@pytest.fixture
-def http_port():
-    return 8000
-
-
 @pytest.yield_fixture
-def start_services(http_port):
-    cmd = 'nameko run catinabox.services.cattery_service'
-    process = subprocess.Popen(shlex.split(cmd))
-    yield process
-    process.terminate()
-    process.wait()
+def start_services(tmpdir):
+    cattery_config = tmpdir.join('cattery.yml')
+    cattery_config.write(
+        yaml.dump({'WEB_SERVER_ADDRESS': 'localhost:8080'}))
+    food_truck_config = tmpdir.join('food_truck.yml')
+    food_truck_config.write(
+        yaml.dump({'WEB_SERVER_ADDRESS': 'localhost:8081'}))
+
+    cattery_cmd = ('nameko run --config={} '
+                   'catinabox.services.cattery_service')
+    cattery = subprocess.Popen(
+        shlex.split(cattery_cmd.format(str(cattery_config))))
+
+    food_truck_cmd = ('nameko run --config={} '
+                      'catinabox.services.food_truck_service')
+    food_truck = subprocess.Popen(
+        shlex.split(food_truck_cmd.format(str(food_truck_config))))
+
+    yield
+
+    cattery.terminate()
+    food_truck.terminate()
+    cattery.wait()
+    food_truck.wait()
 
 
 @pytest.fixture
-def make_http_client(start_services, http_port):
-    def make_client(base_path):
+def make_http_client(start_services):
+    def make_client(http_port, base_path=''):
         client = HttpBaseClient(
             'http://localhost:{}/{}'.format(http_port, base_path))
         for _ in range(10):
@@ -67,9 +81,9 @@ def make_http_client(start_services, http_port):
 
 @pytest.fixture
 def cattery_client(make_http_client):
-    return make_http_client('')
+    return make_http_client(8080)
 
 
 @pytest.fixture
-def foodtruck_client(make_http_client):
-    return make_http_client('foodtruck')
+def food_truck_client(make_http_client):
+    return make_http_client(8081)
