@@ -26,6 +26,10 @@ class NotEnoughFood(Exception):
 
 
 class Cattery(object):
+    """ A collection of cats.
+
+    The collection can be added to and removed from, and the cats can be fed.
+    """
     def __init__(self):
         self._cats = []
 
@@ -38,12 +42,23 @@ class Cattery(object):
         return self._cats
 
     def add_cats(self, names):
+        """Add cats with the specified names to the cattery.
+
+        :param names: A list of the names of cats to add to the cattery.
+        """
         for name in names:
             new_cat = copy.deepcopy(NEW_CAT_TEMPLATE)
             new_cat.update({"name" : name})
             self._cats.append(new_cat)
 
     def remove_cat(self, name):
+        """Remove the specified cat from the cattery.
+
+        The first cat found in the cattery with the specified name will be
+        removed.
+
+        :param name: The name of the cat to remove.
+        """
         cats = [cat for cat in self._cats
                 if cat["name"] == name]
         if len(cats) == 0:
@@ -51,6 +66,14 @@ class Cattery(object):
         self._cats.remove(cats[0])
 
     def feed_cats(self, foods_to_feed):
+        """Feed the specified foods to the cats in the cattery.
+
+        If all cats cannot be fed, an exception will be raised.
+        If too much food is provided, the extra will go to waste.
+
+        :param foods_to_feed: A list with a string for each food item to feed
+                              to the cats.
+        """
         if len(foods_to_feed) < self.num_cats:
             raise NotEnoughFood(self.num_cats, foods_to_feed)
 

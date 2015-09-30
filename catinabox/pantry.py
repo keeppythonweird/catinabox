@@ -29,14 +29,31 @@ class Pantry(object):
         self._food = []
 
     def add_food(self, food_type, quantity):
+        """Add the specified food to the pantry, in the specified quantity.
+
+        :param food_type: A string, in singular, identifying the food to add.
+        :param quantity: The number of food items of the specified type to add.
+        """
         if quantity <= 0:
             raise InvalidQuantity(quantity)
         self._food += [food_type] * quantity
 
     def list_food(self):
+        """Get a list of the foods in the pantry.
+
+        :return: A copy of the list of all food items in the pantry.
+        """
         return copy.copy(self._food)
 
     def retrieve_food(self, quantity):
+        """Retrieve the specified number of food items from the pantry.
+
+        Items in the pantry are retrieved FIFO.
+
+        :param quantity: The number of food items to retrieve.
+        :return: A list of food items. Each item in the list is a string
+                 identifying the type of the food item.
+        """
         if quantity > len(self._food):
             raise NotEnoughItemsInPantry(len(self._food), quantity)
         retrieved_food = self._food[:quantity]
