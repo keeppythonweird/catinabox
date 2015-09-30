@@ -3,7 +3,7 @@ from nameko.web.handlers import http
 import json
 import six
 
-from catinabox import pantry
+from catinabox import pantry, cattery
 
 
 CAT_SITTING_ON_FENCE = '''
@@ -29,7 +29,6 @@ CAT_SITTING_ON_FENCE = '''
   |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
   jgs|  |  |  |  |  |  |  |  |  |  |  |  |  |
 '''
-NEW_CAT_TEMPLATE = {"food_eaten": []}
 
 
 def json_decode(raw):
@@ -41,7 +40,7 @@ def json_decode(raw):
 
 class CatteryService(object):
     name = 'cattery'
-    _cats = []
+    _cats = cattery.Cattery()
     _pantry = pantry.Pantry()
 
     @http('GET', '/')
@@ -54,26 +53,21 @@ class CatteryService(object):
 
     @http('GET', '/cats')
     def get_cats(self, request):
-        return 200, json.dumps(self._cats)
+        return 200, json.dumps(self._cats.cats)
 
     @http('POST', '/cats')
     def create_cat(self, request):
         cat_to_add = json_decode(request.get_data())
-        new_cat = copy.deepcopy(NEW_CAT_TEMPLATE)
-        new_cat.update(cat_to_add)
-        self._cats.append(new_cat)
-        return 201, ""
-        # return 201, json.dumps(cat_to_add)
+        self._cats.add_cats([cat_to_add["name"]])
+        return 201, json.dumps(cat_to_add)
 
     @http('DELETE', '/cats')
     def delete_cat(self, request):
         cat_to_delete = json_decode(request.get_data())
-        cats = [cat for cat in self._cats
-                if cat["name"] == cat_to_delete["name"]]
-        if len(cats) == 0:
+        try:
+            self._cats.remove_cat(cat_to_delete["name"])
+        except cattery.CatNotFound:
             return 404, json.dumps(cat_to_delete)
-        # TODO: there must only be one
-        self._cats.remove(cats[0])
         return 204, ""
 
     ###########################################################################
@@ -82,11 +76,8 @@ class CatteryService(object):
 
     @http('POST', '/cats/dishes')
     def feed_the_cats(self, request):
-        foods_to_feed = self._pantry.retrieve_food(len(self._cats))
-
-        for cat, food in zip(self._cats, foods_to_feed):
-            cat["food_eaten"].append(food)
-
+        foods_to_feed = self._pantry.retrieve_food(self._cats.num_cats)
+        self._cats.feed_cats(foods_to_feed)
         return 204, ""
 
     ###########################################################################
