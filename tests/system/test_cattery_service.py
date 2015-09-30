@@ -1,7 +1,8 @@
 import json
 
 
-class TestGetCats(object):
+class TestCatteryService(object):
+
     def test__empty_cattery(self, cattery_client):
         # Returns no cats
         result = cattery_client.get('cats')
