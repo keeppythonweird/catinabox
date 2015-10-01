@@ -4,13 +4,13 @@
 
 Intro to Testing and Test Automation in Python
 
+![catinabox](docs/catinabox.png)
+
 This repo holds a tutorial which will walk you through:
 - Adding unit test coverage to a project with no tests
 - Adding system tests to a separate webserver
 - Observing test success and coverage using
   [Travis CI](https://travis-ci.org/) and [coveralls](https://coveralls.io/).
-- Adding a new feature with test coverage using TDD (with both unit and
-  system testing)
 
 # Requirements
 
@@ -33,5 +33,5 @@ This repo holds a tutorial which will walk you through:
 2. [Step 2](./steps/2.md) - Adding unit test coverage
 3. [Step 3](./steps/3.md) - Travis CI and coveralls
 4. [Step 4](./steps/4.md) - Adding system tests
-5. Step 5 - Coming soon - Adding a feature with TDD
 
+![cattery](docs/cattery.png)
