@@ -14,8 +14,6 @@ class TestCatteryService(object):
                                        data=json.dumps({"name": "Theodora"}))
         assert result.status_code == 404
 
-        # Feeding cat gives you an error
-
     def test__adding_a_cat(self, cattery_client):
         # Add the cat
         result = cattery_client.post('cats',
