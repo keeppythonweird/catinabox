@@ -11,7 +11,9 @@ class TestPantry(object):
 
     def test__add_food__succeeds(self):
         p = pantry.Pantry()
-        assert False
+        assert p.list_food() == []
+        p.add_food('high quality crisps', 2)
+        assert p.list_food() == ['high quality crisps', 'high quality crisps']
 
     def test__add_food__quantity_0__raises(self):
         p = pantry.Pantry()
