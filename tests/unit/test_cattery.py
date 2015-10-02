@@ -11,7 +11,8 @@ class TestCattery(object):
 
     def test__add_cats__succeeds(self):
         c = cattery.Cattery()
-        assert False
+        c.add_cats(["Fluffy", "Snookums"])
+        assert c.num_cats == 2
 
     ###########################################################################
     # remove_cat
@@ -19,7 +20,9 @@ class TestCattery(object):
 
     def test__remove_cat__succeeds(self):
         c = cattery.Cattery()
-        assert False
+        c.add_cats(["Fluffy", "Snookums"])
+        c.remove_cat('Fluffy')
+        assert c.cats == [{"name": "Snookums", 'food_eaten': []}]
 
     def test__remove_cat__no_cats__fails(self):
         c = cattery.Cattery()
