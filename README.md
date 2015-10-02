@@ -5,6 +5,7 @@
 Intro to Testing and Test Automation in Python
 
 Accompanies the [Intro to Testing and Test Automation in Python slide deck](https://docs.google.com/presentation/d/1Yt-umW3l8NBHqJJk6PbM7tP5n2LZs5iVIyLwvnsGAvA/edit?usp=sharing).
+Aesthetic heavily inspired by [@sailorhg](https://twitter.com/sailorhg).
 
 ![catinabox](docs/catinabox.png)
 
