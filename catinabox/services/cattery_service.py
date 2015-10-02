@@ -1,4 +1,3 @@
-import copy
 from nameko.web.handlers import http
 import json
 import six
@@ -6,7 +5,7 @@ import six
 from catinabox import pantry, cattery
 
 
-CAT_SITTING_ON_FENCE = '''
+CAT_SITTING_ON_FENCE = r'''
              *     ,MMM8&&&.            *
                   MMMM88&&&&&    .
                  MMMM88&&&&&&&
