@@ -25,6 +25,12 @@ class NotEnoughItemsInPantry(Exception):
 
 
 class Pantry(object):
+    """
+    A collection of food to feed cats.
+
+    Food can be added, viewed, and removed.
+    """
+
     def __init__(self):
         self._food = []
 
