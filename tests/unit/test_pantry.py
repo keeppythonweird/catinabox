@@ -11,7 +11,17 @@ class TestPantry(object):
 
     def test__add_food__succeeds(self):
         p = pantry.Pantry()
-        assert False
+        p.add_food(food_type="burger", quantity=3)
+        p.add_food(food_type="pancake", quantity=4)
+        assert p.list_food() == ["burger",
+                                 "burger",
+                                 "burger",
+                                 "pancake",
+                                 "pancake",
+                                 "pancake",
+                                 "pancake"]
+
+        #assert False
 
     def test__add_food__quantity_0__raises(self):
         p = pantry.Pantry()
