@@ -48,7 +48,7 @@ class Cattery(object):
         """
         for name in names:
             new_cat = copy.deepcopy(NEW_CAT_TEMPLATE)
-            new_cat.update({"name" : name})
+            new_cat.update({"name": name})
             self._cats.append(new_cat)
 
     def remove_cat(self, name):

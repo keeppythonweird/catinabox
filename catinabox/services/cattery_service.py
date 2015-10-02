@@ -1,4 +1,3 @@
-import copy
 from nameko.web.handlers import http
 import json
 import six
