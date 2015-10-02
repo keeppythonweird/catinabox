@@ -6,13 +6,19 @@ class TestCatteryService(object):
     def test__empty_cattery(self, cattery_client):
         # Returns no cats
         result = cattery_client.get('cats')
-        assert False
+        assert result.json() == []
+        assert result.status_code == 200
 
     def test__adding_a_cat(self, cattery_client):
         # Add the cat
         result = cattery_client.post('cats',
                                      data=json.dumps({"name": "Theodora"}))
-        assert False
+        assert result.status_code == 201
+
+        # Get the cat that was just added
+        result = cattery_client.get('cats')
+        assert result.json() == [{"name": "Theodora", "food_eaten": []}]
+        assert result.status_code == 200
 
     def test__removing_a_cat(self, cattery_client):
         # Add a cat
