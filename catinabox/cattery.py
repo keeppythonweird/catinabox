@@ -39,4 +39,3 @@ class Cattery(object):
         if len(cats) == 0:
             raise CatNotFound(name)
         self._cats.remove(cats[0])
-

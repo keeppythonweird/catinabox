@@ -9,4 +9,3 @@ def cat_years_to_hooman_years(age_in_cat_years):
              a long human lifespan.
     """
     return age_in_cat_years * NUM_HOOMAN_YEARS_IN_CAT_YEAR
-
