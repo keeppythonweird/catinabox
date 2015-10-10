@@ -1,4 +1,4 @@
-# Step 3: See your progress - Travis CI and Coveralls
+# Crate a pull request and see your progress - Travis CI and Coveralls
 
 In this step, you will commit your changes, and create a pull request. This
 will kick off continuous integration and coverage reporting, which you can
@@ -11,19 +11,17 @@ see from your pull request.
   You can see that the build is successfully passing, but the overall coverage
   is pretty low.
   
-2. Commit your new unit tests from [Step 2](./2.md) to your fork of
-  `catinabox` (you can create a separate branch if you'd prefer):
+2. Commit your new unit tests from [the previous step](./simple_function.md)
+  to your fork of `catinabox`:
   
   ```bash
-  christie@paw-paw:~$ git add -u
-  christie@paw-paw:~$ git diff --cached
-  christie@paw-paw:~$ git commit
+  user@host:~$ git commit -a
   ```
 3. When you are happy with your commit and your changes, push them back to your
    fork:
    
   ```bash
-  christie@paw-paw:~$ git push origin master
+  user@host:~$ git push origin master
   ```
 
 4. Visit github and open a new pull request:
@@ -40,7 +38,7 @@ see from your pull request.
 6. If you see a build failure, you can run all tests locally:
 
   ```bash
-  christie@paw-paw:~$ python setup.py test
+  user@host:~$ python setup.py test
   ```
   
   However if the failure is with the other major version of python (e.g.
