@@ -1,12 +1,13 @@
 import pytest
 import six
 import time
+
+from catinabox import catactivities
+
 if six.PY2:
     import mock
 else:
     from unittest import mock
-
-from catinabox import catactivities
 
 
 @mock.patch.object(time, "sleep", autospec=True)

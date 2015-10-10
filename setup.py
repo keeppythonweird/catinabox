@@ -22,6 +22,7 @@ class PyTest(TestCommand):
         self.default_args = [
             '--cov=catinabox',
             '--cov-report=term-missing',
+            '--pep8',
             'tests',
         ]
 
