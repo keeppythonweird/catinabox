@@ -19,12 +19,6 @@ class PyTest(TestCommand):
     def initialize_options(self):
         TestCommand.initialize_options(self)
         self.pytest_args = ''
-        self.default_args = [
-            '--cov=catinabox',
-            '--cov-report=term-missing',
-            '--pep8',
-            'tests',
-        ]
 
     def finalize_options(self):
         TestCommand.finalize_options(self)
@@ -33,7 +27,7 @@ class PyTest(TestCommand):
 
     def run_tests(self):
         import pytest
-        errno = pytest.main(self.default_args + shlex.split(self.pytest_args))
+        errno = pytest.main(shlex.split(self.pytest_args))
         sys.exit(errno)
 
 
