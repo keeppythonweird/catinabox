@@ -20,14 +20,14 @@ def test__cat_years_to_hooman_years__0__returns_0():
 
 def test__cat_years_to_hooman_years__less_0__raises():
     with pytest.raises(safecatmath.InvalidAge):
-        hooman_age = safecatmath.cat_years_to_hooman_years(-5)
+        safecatmath.cat_years_to_hooman_years(-5)
 
 
 def test__cat_years_to_hooman_years__older_than_1000__raises():
     with pytest.raises(safecatmath.InvalidAge):
-        hooman_age = safecatmath.cat_years_to_hooman_years(1500)
+        safecatmath.cat_years_to_hooman_years(1500)
 
 
 def test__cat_years_to_hooman_years__string__raises():
     with pytest.raises(safecatmath.InvalidAge):
-        hooman_age = safecatmath.cat_years_to_hooman_years("cat")
+        safecatmath.cat_years_to_hooman_years("cat")
