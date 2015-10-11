@@ -4,10 +4,10 @@ import sys
 from setuptools import setup, find_packages
 from setuptools.command.test import test as TestCommand
 
-with open('C:\Users\Ann\Documents\GitHub\catinabox\equirements.txt') as fd:
+with open('C:\Users\Ann\Documents\GitHub\catinabox\requirements.txt') as fd:
     requirements = [line.rstrip() for line in fd]
 
-with open('C:\Users\Ann\Documents\GitHub\catinabox\est_requirements.txt') as fd:
+with open('C:\Users\Ann\Documents\GitHub\catinabox\test_requirements.txt') as fd:
     test_requirements = [line.rstrip() for line in fd]
 
 
