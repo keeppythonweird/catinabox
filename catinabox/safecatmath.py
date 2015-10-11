@@ -22,11 +22,10 @@ def cat_years_to_hooman_years(age_in_cat_years):
     :return: The age of the cat relative to a human, assuming 100 years is
              a long human lifespan.
     """
-    if (not (isinstance(age_in_cat_years, int) or
-             isinstance(age_in_cat_years, float))):
+    if not isinstance(age_in_cat_years, (int, float)):
         raise InvalidAge(age_in_cat_years)
 
-    if (age_in_cat_years < 0 or age_in_cat_years > MAX_CAT_AGE):
+    if not 0 <= age_in_cat_years <= MAX_CAT_AGE:
         raise InvalidAge(age_in_cat_years)
 
     return age_in_cat_years * NUM_HOOMAN_YEARS_IN_CAT_YEAR
