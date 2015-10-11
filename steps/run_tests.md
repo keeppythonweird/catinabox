@@ -13,7 +13,7 @@ your changes, setup your environment and run your tests.
 2. Checkout your fork:
 
   ```bash
-  user@host:~$ git clone https://github.com/<MYUSERNAME>/catinabox.git
+  user@host:~$ git clone git@github.com:<MYUSERNAME>/catinabox.git
   ```
 
 3. Let's create a virtual environment so you can install packages without
@@ -33,9 +33,9 @@ your changes, setup your environment and run your tests.
   user@host:~/catinabox$ source catpy/bin/activate
   (catpy)user@host:~/catinabox$
   ```
-  
+
   If you are on Windows:
-  
+
   ```
   $ .\catpy\Scripts\activate
   ```
@@ -43,7 +43,13 @@ your changes, setup your environment and run your tests.
   You are now in your virtual environment, as indicated by the `(catpy)` prefix
   in your shell prompt.
 
-5. Now that you're setup, you can run the tests!
+5. "Install" catinabox to your site-packages to make sure pytest can find it.
+
+  ```bash
+  (catpy)user@host:~/catinabox$ python setup.py develop
+  ```
+
+6. Now that you're setup, you can run the tests!
 
   ```bash
   (catpy)user@host:~/catinabox$ python setup.py test
@@ -51,4 +57,3 @@ your changes, setup your environment and run your tests.
 
 The tests pass, but why is the coverage so low? Because most of the tests
 are empty! You'll be filling them in during the next steps.
-  
