@@ -1,4 +1,5 @@
 from catinabox import catmath
+import pytest
 
 
 def test__cat_years_to_hooman_years__middle_age__succeeds():
@@ -19,3 +20,8 @@ def test__cat_years_to_hooman_years__0__returns_0():
 
 def test__cat_years_to_hooman_years__negative_year__succeeds():
     assert catmath.cat_years_to_hooman_years(-1) == -5
+
+
+def test__cat_years_to_hooman_years__NaN__fails():
+    with pytest.raises(TypeError):
+        catmath.cat_years_to_hooman_years(None)
