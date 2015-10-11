@@ -20,6 +20,7 @@ def test__add_cats__succeeds(cattery_fixture):
     assert cattery_fixture.cats == ["Fluffy", "Snookums"]
     assert cattery_fixture.num_cats == 2
 
+
 ###########################################################################
 # remove_cat
 ###########################################################################
