@@ -1,4 +1,7 @@
 # catinabox
+
+**Solutions are now included!**
+
 [![Build Status](https://travis-ci.org/keeppythonweird/catinabox.svg?branch=master)](https://travis-ci.org/keeppythonweird/catinabox)
 [![Coverage Status](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=master&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=master)
 
@@ -33,7 +36,5 @@ exploring these features of unit testing in general and pytest in particular:
 5. [Testing classes with fixtures](./steps/classes.md)
 6. [Using mock and patch](./steps/mock.md)
 7. [Parameterized tests](./steps/params.md)
-
-Solutions are visible by viewing the ```solutions``` branch.
 
 ![cattery](docs/cattery.png)
