@@ -30,9 +30,9 @@ exploring these features of unit testing in general and pytest in particular:
 2. [Test a simple function](./steps/simple_function.md)
 3. [Create and build a pull request](./steps/pull.md)
 4. [Testing incorrect input](./steps/input.md)
-5. [Testing classes with fixtures](./classes.md)
-6. [Using mock and patch](./mock.md)
-7. [Parameterized tests](./params.md)
+5. [Testing classes with fixtures](./steps/classes.md)
+6. [Using mock and patch](./steps/mock.md)
+7. [Parameterized tests](./steps/params.md)
 
 Solutions are visible by viewing the ```solutions``` branch.
 
