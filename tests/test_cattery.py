@@ -18,6 +18,14 @@ def test__add_cats__succeeds():
 # remove_cat
 ###########################################################################
 
+@pytest.fixture
+def my_awesome_fixture():
+    c = cattery.Cattery()
+    c.add_cats(["newCat", "OldCat"])
+    with pytest.raises(cattery.CatNotFound):
+        c.remove_cat("OldCat2")
+
+
 def test__remove_cat__succeeds():
     c = cattery.Cattery()
     c.add_cats(["Fluffy", "Junior"])
