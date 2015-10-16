@@ -41,3 +41,28 @@ def test__remove_cat__cat_not_in_cattery__fails(cats):
     cats.add_cats(["Fluffy"])
     with pytest.raises(cattery.CatNotFound):
         cats.remove_cat("Snookums")
+
+
+###########################################################################
+# history
+###########################################################################
+
+def test__history_no_cats(cats):
+    if hasattr(cats, "history"):
+        assert len(cats.history) == 0
+
+
+def test__history_cats_added(cats):
+    if hasattr(cats, "history"):
+        cats.add_cats(["Fluffy"])
+        assert len(cats.history) == 1
+        cats.add_cats(["Junior"])
+        assert len(cats.history) == 2
+
+
+def test__history_cats_added_removed(cats):
+    if hasattr(cats, "history"):
+        cats.add_cats(["Fluffy"])
+        assert len(cats.history) == 1
+        cats.remove_cat("Fluffy")
+        assert len(cats.history) == 2
