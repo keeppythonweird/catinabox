@@ -8,7 +8,7 @@ from catinabox import cattery, mccattery
     mccattery.McCattery
 ])
 def cats(request):
-    return cattery.Cattery()
+    return request.param()
 
 ###########################################################################
 # add_cats
