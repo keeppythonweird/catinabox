@@ -5,13 +5,13 @@
 Intro to Testing and Test Automation in Python
 
 Accompanies the [Intro to Testing and Test Automation in Python slide deck](https://docs.google.com/presentation/d/1Yt-umW3l8NBHqJJk6PbM7tP5n2LZs5iVIyLwvnsGAvA/edit?usp=sharing).
-Aesthetic heavily inspired by [@sailorhg](https://twitter.com/sailorhg).
+Aesthetic inspired by [@sailorhg](https://twitter.com/sailorhg).
 
 ![catinabox](docs/catinabox.png)
 
-This repo holds a tutorial which will walk you through:
-- Adding unit test coverage to a project with no tests
-- Adding system tests to a separate webserver
+This repo holds a tutorial which will walk you through adding unit tests,
+exploring these features of unit testing in general and pytest in particular:
+- Basic unit testing
 - Observing test success and coverage using
   [Travis CI](https://travis-ci.org/) and [coveralls](https://coveralls.io/).
 
@@ -24,17 +24,16 @@ This repo holds a tutorial which will walk you through:
 5. Git (either Github for Windows or command-line git)
 6. Text editor or IDE (e.g. Pycharm)
 
-
-# Travis CI and Coveralls
-
-<TBD> locations of our Travis CI and coveralls
-
-
 # Tutorial Steps
 
-1. [Step 1](./steps/1.md) - Checkout the untested source
-2. [Step 2](./steps/2.md) - Adding unit test coverage
-3. [Step 3](./steps/3.md) - Travis CI and coveralls
-4. [Step 4](./steps/4.md) - Adding system tests
+1. [Setup and run tests](./steps/run_tests.md)
+2. [Test a simple function](./steps/simple_function.md)
+3. [Create and build a pull request](./steps/pull.md)
+4. [Testing incorrect input](./steps/input.md)
+5. [Testing classes with fixtures](./steps/classes.md)
+6. [Using mock and patch](./steps/mock.md)
+7. [Parameterized tests](./steps/params.md)
+
+Solutions are visible by viewing the ```solutions``` branch.
 
 ![cattery](docs/cattery.png)
