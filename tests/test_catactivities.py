@@ -1,8 +1,8 @@
-# import pytest
+import pytest
 import six
 import time
 
-# from catinabox import catactivities
+from catinabox import catactivities
 
 if six.PY2:
     import mock
