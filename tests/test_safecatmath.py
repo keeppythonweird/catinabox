@@ -19,15 +19,15 @@ def test__cat_years_to_hooman_years__0__returns_0():
 
 
 def test__cat_years_to_hooman_years__less_0__raises():
-    with pytest.raises(Exception):
-        safecatmath.year_to_hooman_years(-1)
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years(-1)
 
 
 def test__cat_years_to_hooman_years__older_than_1000__raises():
-    with pytest.raises(Exception):
-        safecatmath.year_to_hooman_years(1001)
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years(1001)
 
 
 def test__cat_years_to_hooman_years__string__raises():
-    with pytest.raises(Exception):
-        safecatmath.year_to_hooman_years()
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years('1')
