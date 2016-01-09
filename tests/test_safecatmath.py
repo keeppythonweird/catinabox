@@ -3,9 +3,14 @@ import pytest
 from catinabox import safecatmath
 
 
-def test__cat_years_to_hooman_years__middle_age__succeeds():
-    hooman_age = safecatmath.cat_years_to_hooman_years(7)
-    assert hooman_age == 35
+@pytest.mark.parametrize('age, expected', [
+    (7, 35),
+    (8.7, 43.5),
+    (11.0, 55.0),
+])
+def test__cat_years_to_hooman_years__middle_age__succeeds(age, expected):
+    hooman_age = safecatmath.cat_years_to_hooman_years(age)
+    assert hooman_age == expected
 
 
 def test__cat_years_to_hooman_years__less_than_one_year__succeeds():
@@ -23,11 +28,21 @@ def test__cat_years_to_hooman_years__less_0__raises():
         safecatmath.cat_years_to_hooman_years(-2)
 
 
-def test__cat_years_to_hooman_years__older_than_1000__raises():
+@pytest.mark.parametrize('age', [
+    1000.1,
+    680000,
+])
+def test__cat_years_to_hooman_years__older_than_1000__raises(age):
     with pytest.raises(safecatmath.InvalidAge):
-        safecatmath.cat_years_to_hooman_years(1001)
+        safecatmath.cat_years_to_hooman_years(age)
 
 
-def test__cat_years_to_hooman_years__string__raises():
+@pytest.mark.parametrize('age', [
+    "35.1",
+    "Not valid age!!",
+    [2, 7.15],
+    {"prog": True},
+])
+def test__cat_years_to_hooman_years__string__raises(age):
     with pytest.raises(safecatmath.InvalidAge):
-        safecatmath.cat_years_to_hooman_years("-2")
+        safecatmath.cat_years_to_hooman_years(age)
