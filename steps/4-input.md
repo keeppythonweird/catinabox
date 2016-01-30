@@ -3,6 +3,10 @@
 This assumes you have setup your environment as described in [run_tests.md]
 and that you are in your virtualenv.
 
+![orange](../pics/orange.png)
+
+If you get stuck, [take a peek at the solution](https://github.com/keeppythonweird/catinabox/blob/solutions/tests/test_safecatmath.py).
+
 1. This time we will be writing tests for [safecatmath.py](../catinabox/safecatmath.py).
    This module contains a new version of ```cat_years_to_hooman_years```.
 
@@ -13,6 +17,7 @@ and that you are in your virtualenv.
    * ```test__cat_years_to_hooman_years__less_0__raises```
    * ```test__cat_years_to_hooman_years__older_than_1000__raises```
    * ```test__cat_years_to_hooman_years__string__raises```
+   * ```test__cat_years_to_hooman_years__nan__raises```
    
 3. Fill in the body of these tests, using ```pytest.raises```.
 

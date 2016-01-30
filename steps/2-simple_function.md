@@ -3,6 +3,10 @@
 This assumes you have setup your environment as described in [run_tests.md]
 and that you are in your virtualenv.
 
+![calico](../pics/calico.png)
+
+If you get stuck, [take a peek at the solution](https://github.com/keeppythonweird/catinabox/blob/solutions/tests/test_catmath.py).
+
 1. We will be writing tests for [catmath.py](../catinabox/catmath.py).
    This module contains only one function ```cat_years_to_hooman_years```.
 

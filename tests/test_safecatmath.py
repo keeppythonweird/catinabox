@@ -28,3 +28,8 @@ def test__cat_years_to_hooman_years__older_than_1000__raises():
 
 def test__cat_years_to_hooman_years__string__raises():
     assert True
+
+
+def test__cat_years_to_hooman_years__nan__raises():
+    # hooman_age = float('nan')
+    assert True
