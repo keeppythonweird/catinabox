@@ -7,3 +7,4 @@ pytest-mccabe==0.1
 pytest-pep8==1.0.6
 pytest==2.8.2
 six==1.9.0
+pytest-mock==0.10.1
