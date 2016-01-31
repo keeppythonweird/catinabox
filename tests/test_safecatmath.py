@@ -31,3 +31,9 @@ def test__cat_years_to_hooman_years__older_than_1000__raises():
 def test__cat_years_to_hooman_years__string__raises():
     with pytest.raises(safecatmath.InvalidAge):
         safecatmath.cat_years_to_hooman_years("five")
+
+
+def test__cat_years_to_hooman_years__nan__raises():
+    hooman_age = float('nan')
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years(hooman_age)
