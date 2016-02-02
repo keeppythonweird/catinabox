@@ -4,6 +4,8 @@ In this step, you will commit your changes, and create a pull request. This
 will kick off continuous integration and coverage reporting, which you can
 see from your pull request.
 
+![coveralls](../pics/coveralls.png)
+
 1. Take a look at:
   * [The current build status](https://travis-ci.org/keeppythonweird/catinabox)
   * [The current coverage](https://coveralls.io/github/keeppythonweird/catinabox?branch=master)
@@ -11,7 +13,7 @@ see from your pull request.
   You can see that the build is successfully passing, but the overall coverage
   is pretty low.
   
-2. Commit your new unit tests from [the previous step](./simple_function.md)
+2. Commit your new unit tests from [the previous step](./2-simple_function.md)
   to your fork of `catinabox`:
   
   ```bash
@@ -26,7 +28,7 @@ see from your pull request.
 
 4. Visit github and open a new pull request:
 
-  1. [https://github.com/keeppythonweird/catinabox]
+  1. [https://github.com/keeppythonweird/catinabox](https://github.com/keeppythonweird/catinabox)
   2. 'Open Pull Request' or 'Pull Requests' -> 'New Pull Request'
 
 5. As soon as the pull request is created, you will see three checks run:

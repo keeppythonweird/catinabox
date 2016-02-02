@@ -3,6 +3,10 @@
 This assumes you have setup your environment as described in [run_tests.md]
 and that you are in your virtualenv.
 
+![time](../pics/time.png)
+
+If you get stuck, [take a peek at the solution](https://github.com/keeppythonweird/catinabox/blob/solutions/tests/test_catactivities.py).
+
 1. Take a look at the ```cat_nap``` method in
    [catactivies.py](../catinabox/catactivities.py). This method 
    sleeps for the provided amount of time if the nap will be

@@ -10,6 +10,8 @@ your changes, setup your environment and run your tests.
    Fork [catinabox](https://github.com/keeppythonweird/catinabox) though
    the github webpage, using the `Fork` button.
 
+![fork](../pics/fork.png)
+
 2. Checkout your fork:
 
   ```bash

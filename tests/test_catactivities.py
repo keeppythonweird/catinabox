@@ -1,20 +1,14 @@
 # import pytest
-import six
-import time
+# import time
 
 # from catinabox import catactivities
 
-if six.PY2:
-    import mock
-else:
-    from unittest import mock
 
-
-@mock.patch.object(time, "sleep", autospec=True)
-def test__cat_nap__satisfying_nap(sleep):
+def test__cat_nap__satisfying_nap(mocker):
+    # mock_sleep = mocker.patch.object(time, "sleep", autospec=True)
     assert True
 
 
-@mock.patch.object(time, "sleep", autospec=True)
-def test__cat_nap__not_satisfying(sleep):
+def test__cat_nap__not_satisfying(mocker):
+    # mock_sleep = mocker.patch.object(time, "sleep", autospec=True)
     assert True

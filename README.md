@@ -1,13 +1,13 @@
-# catinabox
+# catinabox - Intro to Testing and Test Automation in Python
 [![Build Status](https://travis-ci.org/keeppythonweird/catinabox.svg?branch=master)](https://travis-ci.org/keeppythonweird/catinabox)
-[![Coverage Status](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=master&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=master)
 
-Intro to Testing and Test Automation in Python
+Coverage status:
+* Master (test stubs only): [![Coverage Status (Pre tests)](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=master&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=master)
+* [Solutions branch](https://github.com/keeppythonweird/catinabox/tree/solutions) (all tests added): [![Coverage Status (Post tests)](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=solutions&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=solutions)
 
-Accompanies the [Intro to Testing and Test Automation in Python slide deck](https://docs.google.com/presentation/d/1Yt-umW3l8NBHqJJk6PbM7tP5n2LZs5iVIyLwvnsGAvA/edit?usp=sharing).
-Aesthetic inspired by [@sailorhg](https://twitter.com/sailorhg).
+Accompanies the [Intro to Testing and Test Automation in Python slide deck](https://docs.google.com/presentation/d/11j8t75M6lOSZdDv2vJyDKxrk7n5K0GqcX2inx8mzi-M/edit?usp=sharing). Aesthetic inspired by [@sailorhg](https://twitter.com/sailorhg).
 
-![catinabox](docs/catinabox.png)
+![catinabox](pics/catinabox.png)
 
 This repo holds a tutorial which will walk you through adding unit tests,
 exploring these features of unit testing in general and pytest in particular:
@@ -26,14 +26,14 @@ exploring these features of unit testing in general and pytest in particular:
 
 # Tutorial Steps
 
-1. [Setup and run tests](./steps/run_tests.md)
-2. [Test a simple function](./steps/simple_function.md)
-3. [Create and build a pull request](./steps/pull.md)
-4. [Testing incorrect input](./steps/input.md)
-5. [Testing classes with fixtures](./steps/classes.md)
-6. [Using mock and patch](./steps/mock.md)
-7. [Parameterized tests](./steps/params.md)
+1. [Setup and run tests](./steps/1-run_tests.md)
+2. [Test a simple function](./steps/2-simple_function.md)
+3. [Create and build a pull request](./steps/3-pull.md)
+4. [Testing incorrect input](./steps/4-input.md)
+5. [Testing classes with fixtures](./steps/5-classes.md)
+6. [Using mock and patch](./steps/6-mock.md)
+7. [Parameterized tests](./steps/7-params.md)
 
-Solutions are visible by viewing the ```solutions``` branch.
+Solutions are visible by viewing [the solutions branch](https://github.com/keeppythonweird/catinabox/tree/solutions).
 
-![cattery](docs/cattery.png)
+![cattery](pics/cattery.png)
