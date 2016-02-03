@@ -1,14 +1,9 @@
 # Testing using Parametrization
 
-After each of these steps please feel free to commit your changes, run your tests, and push them to Github!
+This assumes you have setup your environment as described in [run_tests.md]
+and that you are in your virtualenv.
 
-```bash
-$ <Make changes to tests.>
-$ python setup.py test
-$ git commit -a
-$ git push origin master
-$ <Check your pull request for Travis build results!>
-```
+![hero](../pics/hero.png)
 
 1. Try enhancing your tests in `tests/test_catmath.py` to make use of
    `pytest.mark.parametrize`.
@@ -41,7 +36,7 @@ $ <Check your pull request for Travis build results!>
        ...
    ```
 
-   First we start by parametrizing the fixture.
+   First we start by parameterizing the fixture.
 
    ```python
    @pytest.fixture(params=[
@@ -61,3 +56,11 @@ $ <Check your pull request for Travis build results!>
    the tests that require them.
 
    Think of all the testing possibilities!
+  ```
+  
+4. When the tests run successfully, push them to your pull request:
+
+  ```bash
+  (catpy)user@host:~/catinabox$ git commit -a
+  (catpy)user@host:~/catinabox$ git push origin master
+  ```

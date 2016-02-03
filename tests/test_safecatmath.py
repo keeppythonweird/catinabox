@@ -32,7 +32,7 @@ def test__cat_years_to_hooman_years__string__raises():
     with pytest.raises(safecatmath.InvalidAge):
         safecatmath.cat_years_to_hooman_years("5")
 
-
 def test__cat_years_to_hooman_years__nan__raises():
     with pytest.raises(safecatmath.InvalidAge):
         safecatmath.cat_years_to_hooman_years(float('nan'))
+)
