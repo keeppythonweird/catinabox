@@ -17,4 +17,3 @@ def test__cat_years_to_hooman_years__0__returns_0():
     cat_age = 0
     hooman_age = catmath.cat_years_to_hooman_years(cat_age)
     assert hooman_age == 0
-
