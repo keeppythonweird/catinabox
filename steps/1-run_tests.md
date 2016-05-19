@@ -12,10 +12,17 @@ your changes, setup your environment and run your tests.
 
 ![fork](../pics/fork.png)
 
-2. Checkout your fork:
+2. Clone your fork:
 
   ```bash
   user@host:~$ git clone git@github.com:<MYUSERNAME>/catinabox.git
+  ```
+  
+3. Create a branch and push it to your fork:
+
+  ```bash
+  user@host:~$ git checkout -b pycon2016
+  user@host:~$ git push origin pycon2016
   ```
 
 3. Let's create a virtual environment so you can install packages without
