@@ -1,4 +1,4 @@
-# Crate a pull request and see your progress - Travis CI and Coveralls
+# Create a pull request and see your progress - Travis CI and Coveralls
 
 In this step, you will commit your changes, and create a pull request. This
 will kick off continuous integration and coverage reporting, which you can
