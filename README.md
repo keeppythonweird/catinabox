@@ -5,7 +5,7 @@ Coverage status:
 * Master (test stubs only): [![Coverage Status (Pre tests)](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=master&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=master)
 * [Solutions branch](https://github.com/keeppythonweird/catinabox/tree/solutions) (all tests added): [![Coverage Status (Post tests)](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=solutions&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=solutions)
 
-Accompanies the [Intro to Testing and Test Automation in Python slide deck](https://docs.google.com/presentation/d/11j8t75M6lOSZdDv2vJyDKxrk7n5K0GqcX2inx8mzi-M/edit?usp=sharing). Aesthetic inspired by [@sailorhg](https://twitter.com/sailorhg).
+Accompanies the [Intro to Testing and Test Automation in Python slide deck](https://docs.google.com/presentation/d/1cNgZdkw2cik4i4Mc1Ka7frPAdZky3hwpq0vycBDMufE/edit). Aesthetic inspired by [@sailorhg](https://twitter.com/sailorhg).
 
 ![catinabox](pics/catinabox.png)
 
