@@ -3,6 +3,11 @@ import pytest
 from catinabox import cattery
 
 
+@pytest.fixture(scope='session', params=[cattery.Cattery])
+def cattery_client(request):
+    return request.param()
+
+
 ###########################################################################
 # add_cats
 ###########################################################################
