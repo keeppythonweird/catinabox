@@ -30,3 +30,9 @@ If you get stuck, [take a peek at the solution](https://github.com/keeppythonwei
   ```
   
   When the tests run successfully, you should see an increase in coverage!
+
+5. (Optional) Bonus: Try to write some tests for ```is_cat_leap_year```. Are
+   you sufficiently convinced that this function works now? Why or why not?
+
+   We'd love to have a discussion about this with you if you get this far. Every
+   developer will have different opinions about this :)
