@@ -36,4 +36,4 @@ def test__cat_years_to_hooman_years__0__returns_0(tc, expct):
     (1804, True)
 ])
 def test__is_cat_leap_year__succeeds(tc, expct):
-    assert catmath.is_cat_leap_year(2016) is True
+    assert catmath.is_cat_leap_year(tc) == expct
