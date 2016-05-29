@@ -6,6 +6,10 @@ from catinabox import cattery
 ###########################################################################
 # add_cats
 ###########################################################################
+@pytest.fixture(scope='session')
+def cattery_client():
+    return cattery.Cattery()
+
 
 def test__add_cats__succeeds():
     c = cattery.Cattery()
