@@ -13,9 +13,9 @@ def test__cat_years_to_hooman_years__middle_age__succeeds(tc, expct):
 
 
 @pytest.mark.parametrize(('tc', 'expct'), [
-    (.5, .5 * 5),
-    (.75, .75 * 5),
-    (.45, .45 * 5)
+    (.5, .5 * catmath.NUM_HOOMAN_YEARS_IN_CAT_YEAR),
+    (.75, .75 * catmath.NUM_HOOMAN_YEARS_IN_CAT_YEAR),
+    (.45, .45 * catmath.NUM_HOOMAN_YEARS_IN_CAT_YEAR)
 ])
 def test__cat_years_to_hooman_years__less_than_one_year__succeeds(tc, expct):
     assert catmath.cat_years_to_hooman_years(tc) == expct
