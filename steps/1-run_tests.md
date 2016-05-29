@@ -21,20 +21,20 @@ your changes, setup your environment and run your tests.
 3. Create a branch and push it to your fork:
 
   ```bash
-  user@host:~$ git checkout -b pycon2016
-  user@host:~$ git push origin pycon2016
+  user@host:~$ cd catinabox
+  user@host:catinabox$ git checkout -b pycon2016
+  user@host:catinabox$ git push origin pycon2016
   ```
 
-3. Let's create a virtual environment so you can install packages without
+4. Let's create a virtual environment so you can install packages without
    affecting the rest of your system. Create a virtual environment for running
    `catinabox``:
 
   ```bash
-  user@host:~$ cd catinabox
   user@host:~/catinabox$ virtualenv catpy
   ```
 
-4. Activate your virtual environment.
+5. Activate your virtual environment.
 
   If you are using Linux or a Mac:
 
@@ -52,13 +52,14 @@ your changes, setup your environment and run your tests.
   You are now in your virtual environment, as indicated by the `(catpy)` prefix
   in your shell prompt.
 
-5. "Install" catinabox to your site-packages to make sure pytest can find it.
+6. "Install" catinabox to your site-packages to make sure pytest can find it.
 
   ```bash
-  (catpy)user@host:~/catinabox$ python setup.py develop
+  (catpy)user@host:~/catinabox$ pip install -e .
+  (catpy)user@host:~/catinabox$ pip install -r test_requirements.txt
   ```
 
-6. Now that you're setup, you can run the tests!
+7. Now that you're setup, you can run the tests!
 
   ```bash
   (catpy)user@host:~/catinabox$ python setup.py test

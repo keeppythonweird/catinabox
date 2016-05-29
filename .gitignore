@@ -58,3 +58,6 @@ target/
 
 # Virtualenv folder from tutorial
 catpy/
+
+# pycharm configuration
+.idea

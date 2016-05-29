@@ -34,3 +34,20 @@ If you get stuck, [take a peek at the solution](https://github.com/keeppythonwei
   (catpy)user@host:~/catinabox$ git push origin master
   ```
   
+
+## BONUS
+
+Suppose you had to implement the inverse function for
+```cat_years_to_hooman_years```, lets call it
+```hooman_years_to_cat_years```.
+Do you think it would be valuable to have a test that does:
+
+```python
+assert to_hooman_years(100) == to_cat_years(to_hooman_years(100))
+```
+
+Why or why not?
+(Hint: what should we trust to *absolutely* work when we write tests?)
+
+Call us over if you want to chat about this question! Everyone will
+have different opinions about this.
