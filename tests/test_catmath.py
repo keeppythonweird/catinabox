@@ -26,3 +26,4 @@ def test__is_cat_leap_year__succeeds():
     assert catmath.is_cat_leap_year(1925) is False
     assert catmath.is_cat_leap_year(2000) is True
     assert catmath.is_cat_leap_year(4000) is True
+    assert catmath.is_cat_leap_year(2100) is False
