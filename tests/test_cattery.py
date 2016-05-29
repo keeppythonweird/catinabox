@@ -3,7 +3,7 @@ import pytest
 from catinabox import cattery
 
 
-@pytest.fixture
+@pytest.fixture(scope='scope')
 def cattery_client():
     return cattery.Cattery()
 
