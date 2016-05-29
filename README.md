@@ -1,4 +1,4 @@
-# catinabox - Intro to Testing and Test Automation in Python
+ # catinabox - Intro to Testing and Test Automation in Python
 [![Build Status](https://travis-ci.org/keeppythonweird/catinabox.svg?branch=master)](https://travis-ci.org/keeppythonweird/catinabox)
 
 Coverage status:
