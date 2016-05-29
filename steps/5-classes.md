@@ -20,7 +20,7 @@ If you get stuck, [take a peek at the solution](https://github.com/keeppythonwei
    ```
 
 2. Try adding a `scope` argument to `pytest.fixture`. What happens when
-   you try setting it to `scope`, `session`, or `module`?
+   you try setting it to `session` or `module`?
 
    ```python
    @pytest.fixture(scope='session')
