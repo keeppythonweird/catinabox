@@ -55,7 +55,8 @@ your changes, setup your environment and run your tests.
 6. "Install" catinabox to your site-packages to make sure pytest can find it.
 
   ```bash
-  (catpy)user@host:~/catinabox$ python setup.py develop
+  (catpy)user@host:~/catinabox$ pip install -e .
+  (catpy)user@host:~/catinabox$ pip install -r test_requirements.txt
   ```
 
 7. Now that you're setup, you can run the tests!
