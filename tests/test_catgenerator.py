@@ -23,7 +23,7 @@ def test__get_birthday_datetime(mocker):
     mocker.patch('time.time').return_value = catgenerator.SECONDS_IN_YEAR * 20
     mocker.patch('random.randint').return_value = \
         catgenerator.SECONDS_IN_YEAR * 1
-    assert catgenerator.get_birthday_datetime() == '1971-01-01 01:00:00'
+    assert catgenerator.get_birthday_datetime() == '1971-01-01 00:00:00'
 
 
 def test__cat_generator(mocker):

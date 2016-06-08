@@ -32,7 +32,7 @@ def get_birthday_datetime():
         current_time - (SECONDS_IN_YEAR * MAX_YEARS_OLD),
         current_time)
     return time.strftime('%Y-%m-%d %H:%M:%S',
-                         time.localtime(birthday))
+                         time.gmtime(birthday))
 
 
 def cat_generator():
