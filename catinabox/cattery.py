@@ -1,5 +1,6 @@
 class CatNotFound(Exception):
     """The requested cat was not found in the cattery."""
+
     def __init__(self, name):
         super(CatNotFound, self).__init__(
             "Cat with name {!r} not found in cattery.".format(name)
@@ -9,6 +10,7 @@ class CatNotFound(Exception):
 
 class Cattery(object):
     """ A collection of cats."""
+
     def __init__(self):
         self._cats = []
 

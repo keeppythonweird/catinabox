@@ -15,9 +15,17 @@ def test__cat_years_to_hooman_years__0__returns_0():
 
 # BONUS MATERIAL FOR STEP 2
 
-def test__is_cat_leap_year__succeeds():
-    assert catmath.is_cat_leap_year(2016) is True
+def test__is_cat_leap_year__succeeds_path_1():
+    assert catmath.is_cat_leap_year(2000) is True
 
 
-def test__is_cat_leap_year__fails():
-    assert catmath.is_cat_leap_year(2015) is False
+def test__is_cat_leap_year__succeeds_path_2():
+    assert catmath.is_cat_leap_year(2004) is True
+
+
+def test__is_cat_leap_year__fails_path_1():
+    assert catmath.is_cat_leap_year(2001) is False
+
+
+def test__is_cat_leap_year__fails_path_2():
+    assert catmath.is_cat_leap_year(2100) is False
