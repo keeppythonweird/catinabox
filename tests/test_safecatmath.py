@@ -18,22 +18,7 @@ def test__cat_years_to_hooman_years__0__returns_0():
     assert hooman_age == 0
 
 
-def test__cat_years_to_hooman_years__less_0__raises():
+@pytest.mark.parametrize("age", [float('NaN'), 'abc', 1001, -1])
+def test__cat_years_to_hooman_years_raises(age):
     with pytest.raises(safecatmath.InvalidAge):
-        safecatmath.cat_years_to_hooman_years(-1)
-
-
-def test__cat_years_to_hooman_years__older_than_1000__raises():
-    with pytest.raises(safecatmath.InvalidAge):
-        safecatmath.cat_years_to_hooman_years(1001)
-
-
-def test__cat_years_to_hooman_years__string__raises():
-    with pytest.raises(safecatmath.InvalidAge):
-        safecatmath.cat_years_to_hooman_years('abc')
-
-
-def test__cat_years_to_hooman_years__nan__raises():
-    with pytest.raises(safecatmath.InvalidAge):
-        hooman_age = float('nan')
-        safecatmath.cat_years_to_hooman_years(hooman_age)
+        safecatmath.cat_years_to_hooman_years(age)

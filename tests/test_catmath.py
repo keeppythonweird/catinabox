@@ -1,31 +1,25 @@
+import pytest
+
 from catinabox import catmath
 
 
-def test__cat_years_to_hooman_years__middle_age__succeeds():
-    assert catmath.cat_years_to_hooman_years(40) == 200
-
-
-def test__cat_years_to_hooman_years__less_than_one_year__succeeds():
-    assert catmath.cat_years_to_hooman_years(0.5) == 2.5
-
-
-def test__cat_years_to_hooman_years__0__returns_0():
-    assert catmath.cat_years_to_hooman_years(0) == 0
+@pytest.mark.parametrize(('input_', 'expected'), [(40, 200),
+                                                  (0.5, 2.5),
+                                                  (0, 0)])
+def test__cat_years_to_hooman_years__returns_success(input_, expected):
+    assert catmath.cat_years_to_hooman_years(input_) == expected
 
 
 # BONUS MATERIAL FOR STEP 2
 
-def test__is_cat_leap_year__succeeds_path_1():
-    assert catmath.is_cat_leap_year(2000) is True
+
+@pytest.mark.parametrize(['year', 'bool_'], [(2000, True),
+                                             (2004, True)])
+def test__is_cat_leap_year__succeeds(year, bool_):
+    assert catmath.is_cat_leap_year(year) is bool_
 
 
-def test__is_cat_leap_year__succeeds_path_2():
-    assert catmath.is_cat_leap_year(2004) is True
-
-
-def test__is_cat_leap_year__fails_path_1():
-    assert catmath.is_cat_leap_year(2001) is False
-
-
-def test__is_cat_leap_year__fails_path_2():
-    assert catmath.is_cat_leap_year(2100) is False
+@pytest.mark.parametrize(['year', 'bool_'], [(2001, False),
+                                             (2100, False)])
+def test__is_cat_leap_year__fails(year, bool_):
+    assert catmath.is_cat_leap_year(year) is bool_
