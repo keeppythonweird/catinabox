@@ -1,5 +1,5 @@
 # catinabox - Intro to Testing and Test Automation in Python
-[![Build Status](https://travis-ci.org/keeppythonweird/catinabox.svg?branch=master)](https://travis-ci.org/keeppythonweird/catinabox)
+[![Build Status](https://travis-ci.org/terryjbates/catinabox.svg?branch=pycon2016)](https://travis-ci.org/terryjbates/catinabox)
 
 Coverage status:
 * Master (test stubs only): [![Coverage Status (Pre tests)](https://coveralls.io/repos/keeppythonweird/catinabox/badge.svg?branch=master&service=github)](https://coveralls.io/github/keeppythonweird/catinabox?branch=master)
