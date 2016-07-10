@@ -33,6 +33,7 @@ exploring these features of unit testing in general and pytest in particular:
 5. [Testing classes with fixtures](./steps/5-classes.md)
 6. [Using mock and patch](./steps/6-mock.md)
 7. [Parameterized tests](./steps/7-params.md)
+8. [Refactoring for unit testability](./steps/8-refactor.md)
 
 Solutions are visible by viewing [the solutions branch](https://github.com/keeppythonweird/catinabox/tree/solutions).
 

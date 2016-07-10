@@ -23,7 +23,7 @@ see from your pull request.
    fork:
    
   ```bash
-  user@host:~$ git push origin master
+  user@host:~$ git push origin pycon2016
   ```
 
 4. Visit github and open a new pull request:
