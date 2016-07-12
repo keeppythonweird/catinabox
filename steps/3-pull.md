@@ -23,13 +23,20 @@ see from your pull request.
    fork:
    
   ```bash
-  user@host:~$ git push origin pycon2016
+  user@host:~$ git push origin tutorial_wip
   ```
 
 4. Visit github and open a new pull request:
 
   1. [https://github.com/keeppythonweird/catinabox](https://github.com/keeppythonweird/catinabox)
-  2. 'Open Pull Request' or 'Pull Requests' -> 'New Pull Request'
+  2. Click on the `Pull requests` tab
+  3. Click the `New pull request` button
+  4. Click on the `compare:` drop down and select your branch in your fork.
+  5. Click the `Create pull request` button. This will give you a chance to
+     fill in the subject and description of your pull request.
+  6. Click `Create pull request` to create your pull request.
+  
+  [More information is available in the github docs on creating pull requests.](https://help.github.com/articles/creating-a-pull-request/)
 
 5. As soon as the pull request is created, you will see three checks run:
   

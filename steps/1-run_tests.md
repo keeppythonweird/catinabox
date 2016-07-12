@@ -22,9 +22,12 @@ your changes, setup your environment and run your tests.
 
   ```bash
   user@host:~$ cd catinabox
-  user@host:catinabox$ git checkout -b pycon2016
-  user@host:catinabox$ git push origin pycon2016
+  user@host:catinabox$ git checkout -b tutorial_wip
+  user@host:catinabox$ git push origin tutorial_wip
   ```
+  
+  `tutorial_wip` is the name of the branch and can be any arbitrary string.
+  [More information on git branches is available in the github documentation](https://github.com/Kunena/Kunena-Forum/wiki/Create-a-new-branch-with-git-and-manage-branches).
 
 4. Let's create a virtual environment so you can install packages without
    affecting the rest of your system. Create a virtual environment for running
