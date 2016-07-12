@@ -20,5 +20,17 @@ def test__cat_years_to_hooman_years__0__returns_0():
 
 # BONUS MATERIAL FOR STEP 2
 
-def test__is_cat_leap_year__succeeds():
-    assert catmath.is_cat_leap_year(2016) is True
+def test__is_cat_leap_year__not_divisible_by_4__isnt_leap_year():
+    assert catmath.is_cat_leap_year(1757) is False
+
+
+def test__is_cat_leap_year__divisible_by_100__isnt_leap_year():
+    assert catmath.is_cat_leap_year(1900) is False
+
+
+def test__is_cat_leap_year__centurial_leap_year__is_leap_year():
+    assert catmath.is_cat_leap_year(2000) is True
+
+
+def test__is_cat_leap_year__typical_leap_year__is_leap_year():
+    assert catmath.is_cat_leap_year(2004) is True
