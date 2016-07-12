@@ -64,3 +64,11 @@ and that you are in your virtualenv.
   (catpy)user@host:~/catinabox$ git commit -a
   (catpy)user@host:~/catinabox$ git push origin master
   ```
+
+## BONUS
+
+Take a look at [fixture parameterization](http://pytest.org/latest/fixture.html#fixture-parametrize).
+How could this be useful for testing the `mccattery` module?
+
+Take a look at [test_mccattery.py](https://github.com/keeppythonweird/catinabox/blob/solutions/tests/test_mccattery.py)
+for a solution.
