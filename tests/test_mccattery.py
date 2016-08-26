@@ -36,7 +36,7 @@ def test__remove_cat__cat_not_in_cattery__fails(cattery_client):
         cattery_client.remove_cat("First")
 
 
-# def test__history():
-#     test_mccattery = mccattery.McCattery()
-#     test_mccattery.add_cats(["Jerry"])
-#     assert len(test_mccattery.history) == 1
+def test__history():
+    test_mccattery = mccattery.McCattery()
+    test_mccattery.add_cats(["Jerry"])
+    assert len(test_mccattery.history) == 1

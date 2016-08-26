@@ -23,7 +23,7 @@ def test__get_birthday(mocker):
     randint = mocker.patch("random.randint",
                            return_value=catgenerator.SECONDS_IN_YEAR * 2)
     birthday = catgenerator.get_birthday()
-    assert birthday == "1972-01-01 03:00:00"
+    assert birthday == "1972-01-01 00:00:00"
     randint.assert_called_with(catgenerator.SECONDS_IN_YEAR * 5,
                                catgenerator.SECONDS_IN_YEAR * 35)
 
