@@ -1,0 +1,13 @@
+setup.py
+catinabox/__init__.py
+catinabox/catactivities.py
+catinabox/catgenerator.py
+catinabox/catmath.py
+catinabox/cattery.py
+catinabox/mccattery.py
+catinabox/safecatmath.py
+catinabox.egg-info/PKG-INFO
+catinabox.egg-info/SOURCES.txt
+catinabox.egg-info/dependency_links.txt
+catinabox.egg-info/requires.txt
+catinabox.egg-info/top_level.txt
