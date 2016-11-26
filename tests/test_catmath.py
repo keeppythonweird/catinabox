@@ -24,5 +24,3 @@ def test__is_cat_leap_year__succeeds():
     assert catmath.is_cat_leap_year(1997) is False
 
     assert catmath.is_cat_leap_year(1900) is False
-
-print hell
