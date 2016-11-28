@@ -26,7 +26,6 @@ class Cattery(object):
         :param names: A list of the names of cats to add to the cattery.
         """
         self._cats.extend(names)
-        print (self._cats)
 
     def remove_cat(self, name):
         """Remove the specified cat from the cattery.
@@ -40,4 +39,3 @@ class Cattery(object):
         if len(cats) == 0:
             raise CatNotFound(name)
         self._cats.remove(cats[0])
-        print (self._cats)
