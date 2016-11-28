@@ -1,9 +1,10 @@
 import pytest
 
 from catinabox import cattery
+from catinabox import mccattery
 
 
-@pytest.fixture(params=[cattery.Cattery])
+@pytest.fixture(params=[cattery.Cattery, mccattery.McCattery])
 def cattery_client(request):
     return request.param()
 
@@ -15,6 +16,10 @@ def cattery_client(request):
 def test__add_cats__succeeds(cattery_client):
     cattery_client.add_cats(["Fluffy", "Snookums"])
     assert cattery_client.cats == ["Fluffy", "Snookums"]
+
+    if isinstance(cattery_client, mccattery.McCattery):
+        assert len(cattery_client.history) == 2
+
     assert cattery_client.num_cats == 2
 
 
