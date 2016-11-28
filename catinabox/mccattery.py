@@ -24,7 +24,6 @@ class McCattery(Cattery):
         for name in names:
             self._history.append("Added {!r} to the McCattery on {!r}".format(
                 name, str(datetime.now())))
-        # print (self._history)
 
     def remove_cat(self, name):
         """Remove the specified cat from the cattery.
@@ -38,4 +37,3 @@ class McCattery(Cattery):
         super(McCattery, self).remove_cat(name)
         self._history.append("Removed {!r} from the McCattery on {!r}".format(
             name, str(datetime.now())))
-        # print(self._history)
