@@ -23,3 +23,7 @@ def test__is_cat_leap_year__fails():
 
 def test__is_cat_leap_year__2000():
     assert catmath.is_cat_leap_year(2000) is True
+
+
+def test__is_cat_leap_year__1601():
+    assert catmath.is_cat_leap_year(200) is False

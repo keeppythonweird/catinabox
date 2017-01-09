@@ -42,3 +42,18 @@ def test__remove_cat__cat_not_in_cattery__fails(cattery_client):
     cattery_client.add_cats(["Fluffy"])
     with pytest.raises(cattery.CatNotFound):
         cattery_client.remove_cat("Snookums")
+
+
+###########################################################################
+# history (McCattery only)
+###########################################################################
+
+
+def test__mccattery_history(cattery_client):
+    if type(cattery_client) is mccattery.McCattery:
+        cattery_client.add_cats(["Fluffy", "Junior"])
+        cattery_client.remove_cat("Fluffy")
+        history = cattery_client.history
+        assert history[0].startswith("Added 'Fluffy'")
+        assert history[1].startswith("Added 'Junior'")
+        assert history[2].startswith("Removed 'Fluffy'")
