@@ -1,11 +1,14 @@
 import pytest
 
-from catinabox import cattery
+from catinabox import cattery, mccattery
 
 
-@pytest.fixture
-def cattery_client():
-    return cattery.Cattery()
+@pytest.fixture(params=[
+    cattery.Cattery,
+    mccattery.McCattery,
+])
+def cattery_client(request):
+    return request.param()
 
 ###########################################################################
 # add_cats
