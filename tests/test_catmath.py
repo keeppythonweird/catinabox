@@ -1,3 +1,4 @@
+import pytest
 from catinabox import catmath
 
 
@@ -17,6 +18,15 @@ def test__cat_years_to_hooman_years__0__returns_0():
     cat_age = 0
     hooman_age = catmath.cat_years_to_hooman_years(cat_age)
     assert hooman_age == 0
+
+
+def test_int_cat_years_string_raises():
+    with pytest.raises(ValueError):
+        catmath.int_cat_years('five')
+
+
+def test_int_cat_years_succeeds():
+    assert catmath.int_cat_years(10) == 50
 
 
 # BONUS MATERIAL FOR STEP 2
