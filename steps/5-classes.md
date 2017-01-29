@@ -44,7 +44,7 @@ If you get stuck, [take a peek at the solution](https://github.com/keeppythonwei
 
 ## BONUS
 
-Take a look at the [builtin fixtures](https://pytest.org/latest/builtin.html#builtin-fixtures-function-arguments<Paste>)
+Take a look at the [builtin fixtures](http://docs.pytest.org/en/latest/fixture.html#fixtures-as-function-arguments)
 that pytest provides. Are there any that would be useful for these, or
 any of the previous tests you have written so far? Can you think of some
 ways you might use fixtures when writing tests for your other projects?
