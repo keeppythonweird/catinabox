@@ -38,8 +38,8 @@ If you get stuck, [take a peek at the solution](https://github.com/keeppythonwei
 ## BONUS
 
 Suppose you had to implement the inverse function for
-```cat_years_to_hooman_years```, lets call it
-```hooman_years_to_cat_years```.
+`cat_years_to_hooman_years`, lets call it
+`hooman_years_to_cat_years`.
 Do you think it would be valuable to have a test that does:
 
 ```python

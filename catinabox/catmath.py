@@ -11,6 +11,16 @@ def cat_years_to_hooman_years(age_in_cat_years):
     return age_in_cat_years * NUM_HOOMAN_YEARS_IN_CAT_YEAR
 
 
+def int_cat_years(age_in_cat_years):
+    """Slight modification of above function.
+    Use it to test that cat_ears that are passed
+    as strings raise an ValueError.
+    """
+    if not isinstance(age_in_cat_years, (int, float)):
+        raise ValueError(age_in_cat_years)
+    return age_in_cat_years * NUM_HOOMAN_YEARS_IN_CAT_YEAR
+
+
 def is_cat_leap_year(year):
     """Returns True iff. year is a cat leap year.
 
