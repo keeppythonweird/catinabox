@@ -1,6 +1,6 @@
 # Write tests for a simple function
 
-This assumes you have setup your environment as described in [run_tests.md]
+This assumes you have setup your environment as described in [step 1](https://github.com/Tset-Noitamotua/catinabox/blob/master/steps/1-run_tests.md)
 and that you are in your virtualenv.
 
 ![calico](../pics/calico.png)
