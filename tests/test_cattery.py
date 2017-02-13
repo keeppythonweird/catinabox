@@ -3,9 +3,14 @@ import pytest
 from catinabox import cattery
 
 
+@pytest.fixture()
+def cattery_client():
+    return cattery.Cattery()
+
 ###########################################################################
 # add_cats
 ###########################################################################
+
 
 def test__add_cats__succeeds():
     c = cattery.Cattery()
