@@ -14,4 +14,4 @@ def test__cat_nap__not_satisfying(mocker):
     mock_sleep = mocker.patch.object(time, "sleep", autospec=True)
     with pytest.raises(catactivities.NapWillNotBeSatisfying):
         catactivities.cat_nap(299)
-    mock_sleep.assert_not_called()
+    assert mock_sleep.call_count == 0
