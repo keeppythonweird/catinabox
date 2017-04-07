@@ -20,10 +20,8 @@ def test__cat_years_to_hooman_years__0__returns_0():
 
 def test__cat_years_to_hooman_years__less_0__raises():
     cat_years = -1
-    with pytest.raises(Exception) as excinfo:
+    with pytest.raises(safecatmath.InvalidAge):
         safecatmath.cat_years_to_hooman_years(cat_years)
-
-    assert "InvalidAge" in str(excinfo.type)
 
 
 def test__cat_years_to_hooman_years__older_than_1000__raises():
