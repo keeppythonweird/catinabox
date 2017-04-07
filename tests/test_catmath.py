@@ -1,9 +1,9 @@
 import pytest
 from catinabox import catmath
 
-@pytest.mark.parametrize("cat_years,hooman_years", [(10, 50), (0.5, 2.5), (0,0)])
 
-
+@pytest.mark.parametrize("cat_years,hooman_years",
+                         [(10, 50), (0.5, 2.5), (0, 0)])
 def test__cat_years_to_hooman_years(cat_years, hooman_years):
     assert catmath.cat_years_to_hooman_years(cat_years) == hooman_years
 
@@ -21,8 +21,8 @@ def test__cat_years_to_hooman_years__0__returns_0():
     assert catmath.cat_years_to_hooman_years(0) == 0
 """
 
-# BONUS MATERIAL FOR STEP 2
 
+# BONUS MATERIAL FOR STEP 2
 def test__is_cat_leap_year__succeeds():
     assert catmath.is_cat_leap_year(2016) is True
 
