@@ -1,29 +1,26 @@
 import pytest
-
 from catinabox import safecatmath
 
 
-def test__cat_years_to_hooman_years__middle_age__succeeds():
-    hooman_age = safecatmath.cat_years_to_hooman_years(7)
-    assert hooman_age == 35
+@pytest.mark.parametrize("cat, human", [
+                         (7, 35),
+                         (0.1, 0.5),
+                         (0, 0)
+                         ])
+def test__cat_years_to_hooman_years__middle_age__succeeds(cat, human):
+    hooman_age = safecatmath.cat_years_to_hooman_years(cat)
+    assert hooman_age == human
 
 
-def test__cat_years_to_hooman_years__less_than_one_year__succeeds():
-    hooman_age = safecatmath.cat_years_to_hooman_years(0.1)
-    assert hooman_age == 0.5
-
-
-def test__cat_years_to_hooman_years__0__returns_0():
-    hooman_age = safecatmath.cat_years_to_hooman_years(0)
-    assert hooman_age == 0
-
-
-def test__cat_years_to_hooman_years__less_0__raises():
-    cat_years = -1
+@pytest.mark.parametrize("invalid_year", [
+                         -1, 1001, "Dog", float('nan')
+                         ])
+def test__cat_years_to_hooman_years__less_0__raises(invalid_year):
     with pytest.raises(safecatmath.InvalidAge):
-        safecatmath.cat_years_to_hooman_years(cat_years)
+        safecatmath.cat_years_to_hooman_years(invalid_year)
 
 
+"""
 def test__cat_years_to_hooman_years__older_than_1000__raises():
     cat_years = 1001
     with pytest.raises(Exception) as excinfo:
@@ -46,3 +43,4 @@ def test__cat_years_to_hooman_years__nan__raises():
         safecatmath.cat_years_to_hooman_years(cat_years)
 
     assert "InvalidAge" in str(excinfo.type)
+"""
