@@ -42,3 +42,10 @@ def test__remove_cat__cat_not_in_cattery__fails(cattery_client):
     cattery_client.add_cats(["Fluffy", "Snookums"])
     with pytest.raises(cattery.CatNotFound):
         cattery_client.remove_cat("Fluffles")
+
+
+def test__mccattery_history__not_empty():
+    mcc = mccattery.McCattery()
+    mcc.add_cats(["Humblebum", "Mouse"])
+    mcc.remove_cat("Humblebum")
+    assert len(mcc.history) == 3
