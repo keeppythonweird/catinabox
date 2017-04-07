@@ -1,3 +1,4 @@
+import pytest
 from catinabox import catmath
 
 @pytest.mark.parametrize("cat_years,hooman_years", [(10, 50), (0.5, 2.5), (0,0)])
