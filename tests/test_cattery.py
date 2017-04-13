@@ -8,6 +8,13 @@ def cattery_client():
     return cattery.Cattery()
 
 
+# @pytest.fixture(scope="module")
+# def cattery_client():
+#     # Setup
+#     yield cattery.Cattery()
+#     # Teardown
+
+
 ###########################################################################
 # add_cats
 ###########################################################################
