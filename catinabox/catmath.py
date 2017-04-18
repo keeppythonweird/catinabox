@@ -8,6 +8,10 @@ def cat_years_to_hooman_years(age_in_cat_years):
     :return: The age of the cat relative to a human, assuming 100 years is
              a long human lifespan.
     """
+    # if age_in_cat_years < = 15:
+    #     # Divide the years by 15. 1 human year = 15 cat years
+    #     return age_in_cat_years / 15
+    # if age_in_cat_years > 15 and age_in_cat_years <
     return age_in_cat_years * NUM_HOOMAN_YEARS_IN_CAT_YEAR
 
 
