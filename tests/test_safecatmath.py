@@ -3,6 +3,15 @@ import pytest
 from catinabox import safecatmath
 
 
+@pytest.mark.parametrize("catage, hoomanage", [
+    (7, 35),
+    (0.1, 0.5),
+    (0, 0)])
+def test__cat_years_all_cases(catage, hoomanage):
+    h = safecatmath.cat_years_to_hooman_years(catage)
+    assert h == hoomanage
+
+
 def test__cat_years_to_hooman_years__middle_age__succeeds():
     hooman_age = safecatmath.cat_years_to_hooman_years(7)
     assert hooman_age == 35
