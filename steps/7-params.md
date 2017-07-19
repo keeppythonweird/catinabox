@@ -56,10 +56,10 @@ and that you are in your virtualenv.
    the tests that require them.
 
    Think of all the testing possibilities!
-  ```bash
   
 4. When the tests run successfully, push them to your pull request:
 
+  ```bash
   (catpy)user@host:~/catinabox$ git commit -a
   (catpy)user@host:~/catinabox$ git push origin master
   ```
