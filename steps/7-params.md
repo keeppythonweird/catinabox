@@ -56,7 +56,6 @@ and that you are in your virtualenv.
    the tests that require them.
 
    Think of all the testing possibilities!
-  ```
   
 4. When the tests run successfully, push them to your pull request:
 
