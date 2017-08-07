@@ -31,5 +31,9 @@ def test__is_cat_leap_year_div_4_100():
     assert catmath.is_cat_leap_year(1984) is True
 
 
-def test__is_cat_leap_year_div_4_100_400():
+def test__is_cat_leap_year_div_4_100_400_passes():
     assert catmath.is_cat_leap_year(2000) is True
+
+
+def test__is_cat_leap_year_div_4_100_400_fails():
+    assert catmath.is_cat_leap_year(1700) is False
