@@ -61,3 +61,4 @@ catpy/
 
 # pycharm configuration
 .idea
+*.swp
