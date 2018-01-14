@@ -1,6 +1,7 @@
 # import pytest
 
 from catinabox import safecatmath
+import pytest
 
 
 def test__cat_years_to_hooman_years__middle_age__succeeds():
@@ -19,17 +20,20 @@ def test__cat_years_to_hooman_years__0__returns_0():
 
 
 def test__cat_years_to_hooman_years__less_0__raises():
-    assert True
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years(-1)
 
 
 def test__cat_years_to_hooman_years__older_than_1000__raises():
-    assert True
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years(1001)
 
 
 def test__cat_years_to_hooman_years__string__raises():
-    assert True
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years('1')
 
 
 def test__cat_years_to_hooman_years__nan__raises():
-    # hooman_age = float('nan')
-    assert True
+    with pytest.raises(safecatmath.InvalidAge):
+        safecatmath.cat_years_to_hooman_years(float('nan'))
