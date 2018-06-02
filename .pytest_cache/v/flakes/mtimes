@@ -1,0 +1,50 @@
+{
+  "catinabox/__init__.py": [
+    1527968854.1161103,
+    []
+  ],
+  "catinabox/catactivities.py": [
+    1527968854.1201196,
+    []
+  ],
+  "catinabox/catgenerator.py": [
+    1527968854.1251335,
+    []
+  ],
+  "catinabox/catmath.py": [
+    1527974091.0336118,
+    []
+  ],
+  "catinabox/cattery.py": [
+    1527968854.1331818,
+    []
+  ],
+  "catinabox/mccattery.py": [
+    1527968854.1371648,
+    []
+  ],
+  "catinabox/safecatmath.py": [
+    1527968854.1412032,
+    []
+  ],
+  "tests/test_catactivities.py": [
+    1527968854.423536,
+    []
+  ],
+  "tests/test_catgenerator.py": [
+    1527968854.4336014,
+    []
+  ],
+  "tests/test_catmath.py": [
+    1527974087.8107457,
+    []
+  ],
+  "tests/test_cattery.py": [
+    1527968854.548675,
+    []
+  ],
+  "tests/test_safecatmath.py": [
+    1527968854.5587387,
+    []
+  ]
+}
