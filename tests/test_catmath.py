@@ -1,10 +1,11 @@
 from catinabox import catmath
+import pytest
 
 
-def test__cat_years_to_hooman_years__middle_age__succeeds():
-    cat_years = 10
-    human_years = catmath.cat_years_to_hooman_years(cat_years)
-    assert human_years == 50
+@pytest.mark.parametrize('age_cat,age_human', [(10, 50), (20, 100)])
+def test__cat_years_to_hooman_years__middle_age__succeeds(age_cat, age_human):
+    human_years = catmath.cat_years_to_hooman_years(age_cat)
+    assert human_years == age_human
 
 
 def test__cat_years_to_hooman_years__less_than_one_year__succeeds():

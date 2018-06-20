@@ -1,14 +1,17 @@
 import pytest
 
 from catinabox import cattery
+from catinabox import mccattery
 
 
 ###########################################################################
 # add_cats
 ###########################################################################
-@pytest.fixture(scope='function')
-def cattery_client():
-    return cattery.Cattery()
+@pytest.fixture(scope='function',
+                params=[cattery.Cattery, mccattery.McCattery],
+                ids=['cattery', 'mccattery'])
+def cattery_client(request):
+    return request.param()
 
 
 def test__add_cats__succeeds(cattery_client):

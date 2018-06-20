@@ -2,7 +2,6 @@ import pytest
 import time
 
 from catinabox import catactivities
-from catinabox.catactivities import NapWillNotBeSatisfying
 
 
 def test__cat_nap__satisfying_nap(mocker):
@@ -13,6 +12,6 @@ def test__cat_nap__satisfying_nap(mocker):
 
 def test__cat_nap__not_satisfying(mocker):
     mock_sleep = mocker.patch.object(time, "sleep", autospec=True)
-    with pytest.raises(NapWillNotBeSatisfying):
+    with pytest.raises(catactivities.NapWillNotBeSatisfying):
         catactivities.cat_nap(200)
     mock_sleep.assert_not_called()
