@@ -61,3 +61,6 @@ catpy/
 
 # pycharm configuration
 .idea
+
+Pipfile
+Pipfile.lock
