@@ -21,11 +21,11 @@ def is_cat_leap_year(year):
         bool: True iff. the cat year is a leap cat year.
 
     """
-    if year % 4 != 0:
+    if (year % 4) != 0:
         return False
-    elif year % 100 != 0:
+    elif (year % 400) == 0:
         return True
-    elif year % 400 != 0:
+    elif (year % 100) == 0:
         return False
     else:
         return True
