@@ -19,5 +19,6 @@ def test__cat_years_to_hooman_years__0__returns_0():
 def test__is_cat_leap_year__succeeds():
     assert catmath.is_cat_leap_year(2016) is True
 
+
 def test__is_cat_lear_year__fails():
     assert catmath.is_cat_leap_year(2011) is False
