@@ -1,5 +1,4 @@
 import pytest
-import mock
 import time
 from catinabox import catgenerator
 
@@ -9,15 +8,15 @@ def test_get_name(url, expected):
     return catgenerator.get_name(url) == expected
 
 
-def test_get_time(mock):
-    mock_time = mock.patch.object(time, "time", autospec=True)
+def test_get_time(mocker):
+    mock_time = mocker.patch.object(time, "time", autospec=True)
     mock_time.return_value = 7
     assert catgenerator.get_current_time() == 7
 
 
 @pytest.mark.parametrize('current_time, birthday', [(7, -102251259)])
-def test_get_birthday(mock, current_time, birthday):
-    mock_time = mock.patch.object(time, "time", autospec=True)
+def test_get_birthday(mocker, current_time, birthday):
+    mock_time = mocker.patch.object(time, "time", autospec=True)
     mock_time.return_value = current_time
     assert catgenerator.get_birthday(current_time) == birthday
 
