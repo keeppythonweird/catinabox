@@ -3,7 +3,10 @@ import time
 from catinabox import catgenerator
 
 
-@pytest.mark.parametrize('url, expected', [("http://namey.muffinlabs.com/name.json", "Jessica")])
+url = "http://namey.muffinlabs.com/name.json"
+
+
+@pytest.mark.parametrize('url, expected', [(url, "Jessica")])
 def test_get_name(url, expected):
     return catgenerator.get_name(url) == expected
 
@@ -21,7 +24,10 @@ def test_get_birthday(mocker, current_time, birthday):
     assert catgenerator.get_birthday(current_time) == birthday
 
 
-@pytest.mark.parametrize('birthday, datetime', [(-102251259, '1966-10-05 08:52:21')])
+date = '1966-10-05 08:52:21'
+
+
+@pytest.mark.parametrize('birthday, datetime', [(-102251259, date)])
 def test_to_datetime(birthday, datetime):
     assert catgenerator.to_datetime(birthday) == datetime
 
