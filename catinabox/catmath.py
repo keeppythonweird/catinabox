@@ -1,7 +1,7 @@
 NUM_HOOMAN_YEARS_IN_CAT_YEAR = 5
 
 
-def cat_years_to_hooman_years(age_in_cat_years):
+def cat_years_to_hooman_years(age_in_cat_years: float) -> float:
     """Converts the cat's age to the equivalent in hooman years.
 
     :param age_in_cat_years: A float: cat's age in years
