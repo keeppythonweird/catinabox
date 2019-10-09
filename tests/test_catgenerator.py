@@ -20,7 +20,7 @@ def test_get_birthday(mocker):
 
 
 def test_cat_generator(mocker):
-    mock_name = mocker.patch(catgenerator, 'get_name')
+    mock_name = mocker.patch('catgenerator.get_name')
     mock_name.side_effect = ["David", "Moe"]
     mock_bday = mocker.patch(catgenerator, 'get_birthday')
     mock_bday.return_value = 'birthday'
