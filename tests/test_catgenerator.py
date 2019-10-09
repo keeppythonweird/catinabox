@@ -19,12 +19,12 @@ def test_get_birthday(mocker):
 
 
 def test_cat_generator(mocker):
-    mock_name = mocker.patch(get_name, autospec=True)
+    mock_name = mocker.patch(get_name)
     mock_name.side_effect = ["David", "Moe"]
     mock_bday = mocker.patch(get_birthday)
     mock_bday.return_value = 'birthday'
     catgen = catgenerator.cat_generator()
-    assert next(catgen) == {"name" : "David",
-                            "birthday" : "birthday"}
-    assert next(catgen) == {"name" : "Moe",
-                            "birthday" : "birthday"}
+    assert next(catgen) == {"name": "David",
+                            "birthday": "birthday"}
+    assert next(catgen) == {"name": "Moe",
+                            "birthday": "birthday"}
