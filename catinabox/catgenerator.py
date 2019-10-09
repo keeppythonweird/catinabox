@@ -2,7 +2,6 @@ import random
 import requests
 import time
 
-
 NAME_GENERATOR_API_ENDPOINT = "http://namey.muffinlabs.com/name.json"
 # ignoring leap years for now
 SECONDS_IN_YEAR = 365 * 24 * 60 * 60
@@ -18,20 +17,30 @@ class CouldNotGetNameError(Exception):
         )
 
 
+def get_name():
+    result = requests.get(NAME_GENERATOR_API_ENDPOINT)
+    name = result.json()[0]
+    return name
+
+
+def get_birthday():
+    current_time = int(time.time())
+    birthday = random.randint(
+        current_time - (SECONDS_IN_YEAR * MAX_YEARS_OLD),
+        current_time)
+    birthday_datetime = time.strftime('%Y-%m-%d %H:%M:%S',
+                                      time.localtime(birthday))
+    return birthday_datetime
+
+
 def cat_generator():
     while True:
         try:
-            result = requests.get(NAME_GENERATOR_API_ENDPOINT)
-            name = result.json()[0]
+            name = get_name()
         except requests.exceptions.RequestException as e:
             raise CouldNotGetNameError(e)
 
-        current_time = int(time.time())
-        birthday = random.randint(
-            current_time - (SECONDS_IN_YEAR * MAX_YEARS_OLD),
-            current_time)
-        birthday_datetime = time.strftime('%Y-%m-%d %H:%M:%S',
-                                          time.localtime(birthday))
+        birthday_datetime = get_birthday()
 
-        yield {"name": name,
+        yield {"name"    : name,
                "birthday": birthday_datetime}
