@@ -42,5 +42,5 @@ def cat_generator():
 
         birthday_datetime = get_birthday()
 
-        yield {"name"    : name,
+        yield {"name": name,
                "birthday": birthday_datetime}

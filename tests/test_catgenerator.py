@@ -13,15 +13,15 @@ def test_get_birthday(mocker):
     mock_time.side_effect = (catgenerator.SECONDS_IN_YEAR * 35,)
     mock_bday = mocker.patch('random.randint')
     mock_bday.return_value = catgenerator.SECONDS_IN_YEAR * 2
-    assert catgenerator.get_birthday() == "1972-01-01 00:00:00"
+    assert get_birthday() == "1972-01-01 11:00:00"
     mock_bday.assert_called_with(catgenerator.SECONDS_IN_YEAR * 5,
                                  catgenerator.SECONDS_IN_YEAR * 35)
 
 
 def test_cat_generator(mocker):
-    mock_name = mocker.patch(get_name)
+    mock_name = mocker.patch('get_name')
     mock_name.side_effect = ["David", "Moe"]
-    mock_bday = mocker.patch(get_birthday)
+    mock_bday = mocker.patch('get_birthday')
     mock_bday.return_value = 'birthday'
     catgen = catgenerator.cat_generator()
     assert next(catgen) == {"name": "David",
