@@ -7,6 +7,7 @@ from catinabox import cattery
 # add_cats
 ###########################################################################
 
+@pytest.fixture
 def test__add_cats__succeeds():
     c = cattery.Cattery()
     c.add_cats(["Fluffy", "Snookums"])
