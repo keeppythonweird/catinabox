@@ -2,14 +2,23 @@ import pytest
 
 from catinabox import cattery
 
+###########################################################################
+# catery_client
+###########################################################################
+
+@pytest.fixture(scope='session')
+def cattery_client():
+    return ["Fluffy", "Snookums"]
+    
 
 ###########################################################################
 # add_cats
 ###########################################################################
 
-def test__add_cats__succeeds():
+def test__add_cats__succeeds(cattery_client):
     c = cattery.Cattery()
-    c.add_cats(["Fluffy", "Snookums"])
+    #c.add_cats(["Fluffy", "Snookums"])
+    c.add_cats(cattery_client)
     assert c.cats == ["Fluffy", "Snookums"]
     assert c.num_cats == 2
 
@@ -18,15 +27,16 @@ def test__add_cats__succeeds():
 # remove_cat
 ###########################################################################
 
-def test__remove_cat__succeeds():
+def test__remove_cat__succeeds(cattery_client):
     c = cattery.Cattery()
-    c.add_cats(["Fluffy", "Junior"])
+    #c.add_cats(["Fluffy", "Junior"])
+    c.add_cats(cattery_client)
     c.remove_cat("Fluffy")
     assert c.cats == ["Junior"]
     assert c.num_cats == 1
 
 
-def test__remove_cat__no_cats__fails():
+def test__remove_cat__no_cats__fails(cattery_client):
     c = cattery.Cattery()
     with pytest.raises(cattery.CatNotFound):
         c.remove_cat("Fluffles")
